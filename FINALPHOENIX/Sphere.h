@@ -1,0 +1,29 @@
+////////////////////////////////////////
+// Sphere.h
+////////////////////////////////////////
+
+#ifndef CSE168_SPHERE_H
+#define CSE168_SPHERE_H
+
+#include "Object.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+class Sphere:public Object {
+public:
+	bool Intersect(const Ray &ray, Intersection &hit);
+	void SetRadius(float r);
+	void SetCenter(Vector3 pos);
+	void SetMtl(Material &mtl) {
+		Mtl = &mtl;
+	}
+
+private:
+	float radius;
+	Vector3 center;
+	Material *Mtl;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
